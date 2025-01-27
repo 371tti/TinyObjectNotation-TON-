@@ -78,21 +78,15 @@
 }
 ```
 
-1. **Objectヘッダー**:  
-   - `type=0b100001`（object）, `data-len-size=0b01`（2バイト長）, `data-len=34`
+```
+0b01010001 0x00 0x22
+0b01010100 0x04 "name" 0b00111001 0x05 "Alice"
+0b00110000 0x03 "age" 0b00001000 0x19 0x00 0x00 0x00
+0b01100001 0x00 0x09 "isStudent" 0b00000100 0x00
+```
 
-2. **キーと値ペア:**
-   - `"name": "Alice"`
-     - **キー**: `key-hash=0b010101`, `key-len-size=0b00`, `key-len=4`, `key-string="name"`
-     - **値**: `type=0b000001`, `data-len=5`, `data="Alice"`
-   - `"age": 25`
-     - **キー**: `key-hash=0b001100`, `key-len-size=0b00`, `key-len=3`, `key-string="age"`
-     - **値**: `type=0b000010`, `data-len=4`, `data=25`
-   - `"isStudent": false`
-     - **キー**: `key-hash=0b011000`, `key-len-size=0b01`, `key-len=9`, `key-string="isStudent"`
-     - **値**: `type=0b000011`, `data-len=1`, `data=false`
 
 **合計サイズ**:
 - JSON: 48バイト  
 - BSON: 42バイト  
-- カスタムフォーマット: **41バイト**
+- カスタムフォーマット: **41バイト** 
