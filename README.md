@@ -10,7 +10,7 @@
 
 2. **Key**
    ```
-   <6bit: key-hash> <2bit: key-len-size> <8-64bit: key-len> <nbyte: key-string>
+   <6bit: key-hash(ShipHash[:6])> <2bit: key-len-size> <8-64bit: key-len> <nbyte: key-string>
    ```
    - **`key-hash`**: キー文字列のハッシュ値を格納（検索高速化用）。
    - **`key-len`**: キー文字列の長さ。
