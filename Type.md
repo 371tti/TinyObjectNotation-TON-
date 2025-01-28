@@ -19,26 +19,40 @@
 ### 2.1 Signed Integer (`Int<n>`)
 | **Bit Value**  | **Type Name** | **Description**                                                               | **Size (Bytes)**           | **Standard/Usage**                  |
 |----------------|---------------|-------------------------------------------------------------------------------|----------------------------|-------------------------------------|
-| `0b000010`     | `Int<n>`      | Variable-length signed integer (1-128 bytes).                                | Variable (1-128 bytes)     | General-purpose, equivalent to BigInt. |
+| `0b000010`     | `Int<n>`      | Variable-length signed integer (1-128 bytes). Includes values equivalent to JavaScript's `BigInt`. | Variable (1-128 bytes)     | General-purpose, large number operations. |
 
-- **Examples**:
-  - `Int8` / `Int16` / `Int32` / `Int64` / `Int128`.
+- **Implementation**:
+  - `Int8` (1 byte): Supports -128 to 127.
+  - `Int16` (2 bytes): Supports -32,768 to 32,767.
+  - `Int32` (4 bytes): Supports -2,147,483,648 to 2,147,483,647.
+  - `Int64` (8 bytes): Supports -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807.
+  - `Int128` (16 bytes): Large signed integers for extended precision.
+  - `Int<n>`: Supports arbitrary-length signed integers for custom use cases.
 
 ### 2.2 Unsigned Integer (`UInt<n>`)
 | **Bit Value**  | **Type Name** | **Description**                                                               | **Size (Bytes)**           | **Standard/Usage**    |
 |----------------|---------------|-------------------------------------------------------------------------------|----------------------------|-----------------------|
 | `0b000011`     | `UInt<n>`     | Variable-length unsigned integer (1-128 bytes).                              | Variable (1-128 bytes)     | General-purpose.      |
 
-- **Examples**:
-  - `UInt8` / `UInt16` / `UInt32` / `UInt64` / `UInt128`.
+- **Implementation**:
+  - `UInt8` (1 byte): Supports 0 to 255.
+  - `UInt16` (2 bytes): Supports 0 to 65,535.
+  - `UInt32` (4 bytes): Supports 0 to 4,294,967,295.
+  - `UInt64` (8 bytes): Supports 0 to 18,446,744,073,709,551,615.
+  - `UInt128` (16 bytes): Very large unsigned integers.
+  - `UInt<n>`: Supports arbitrary-length unsigned integers for custom use cases.
 
 ### 2.3 Floating-Point (`Float<n>`)
 | **Bit Value**  | **Type Name** | **Description**                                                               | **Size (Bytes)**           | **Standard/Usage**        |
 |----------------|---------------|-------------------------------------------------------------------------------|----------------------------|---------------------------|
 | `0b000100`     | `Float<n>`    | Variable-length floating-point (2-16 bytes).                                 | Variable (2-16 bytes)      | Scientific, financial.    |
 
-- **Examples**:
-  - `Float16`, `Float32`, `Float64`, `Float80`, `Float128`.
+- **Implementation**:
+  - `Float16`: Half-precision floating-point (2 bytes).
+  - `Float32`: Single-precision floating-point (4 bytes).
+  - `Float64`: Double-precision floating-point (8 bytes).
+  - `Float80`: Extended precision floating-point (10 bytes).
+  - `Float128`: Quadruple-precision floating-point (16 bytes).
 
 ### 2.4 BCD
 | **Bit Value**  | **Type Name** | **Description**                                                               | **Size (Bytes)**           | **Standard/Usage**                   |
@@ -64,8 +78,10 @@
 |----------------|---------------|-----------------------------------------------|--------------------------|----------------------------|
 | `0b001000`     | `Hash`        | Arbitrary-length hash value.                  | Variable                 | Cryptography, checksums.   |
 
-- **Examples**:
-  - SHA-256 (32 bytes), SHA-512 (64 bytes).
+- **Implementation**:
+  - SHA-256 (32 bytes).
+  - SHA-512 (64 bytes).
+  - Custom hash lengths as required.
 
 ### 3.4 UUID
 | **Bit Value**  | **Type Name** | **Description**                                                        | **Size (Bytes)** | **Standard/Usage**                          |
