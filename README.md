@@ -1,6 +1,7 @@
 # Tiny Object Notation
 ～ jsonをちっちゃく効率的に
-##　**概要**
+
+## **概要**
 **Tiny Object Notation**はJsonの柔軟でシンプルなバイナリ改良です。  
 
 以下の要素を追加します
