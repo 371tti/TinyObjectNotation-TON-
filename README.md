@@ -1,8 +1,7 @@
 # Tiny Object Notation
 ～ jsonをちっちゃく効率的に
 
-[en](https://github.com/371tti/TinyObjectNotation-TON-/blob/master/README-en.md)
-
+[[EN](https://github.com/371tti/TinyObjectNotation-TON-/blob/master/README-en.md)]
 ## **概要**
 **Tiny Object Notation**はJsonの柔軟でシンプルなバイナリ改良です。  
 
