@@ -19,7 +19,7 @@ Compression should be handled by an upper layer that may include TON data.
 
 ### **Comparison with Other Formats**
 
-| **Feature**               | **JSON**                           | **BSON**                        | **Custom Format (using key-hash)**   |
+| **Feature**               | **JSON**                           | **BSON**                        | **TON**   |
 |---------------------------|-------------------------------------|---------------------------------|---------------------------------------|
 | **Data Size**             | Large (due to string redundancy)    | Relatively small                 | **Smallest (optimized keys)**         |
 | **Key Lookup Speed**      | Slow (fully string-based)           | Moderate (NULL-terminated keys)  | **Fast (hash match + string check)**  |
