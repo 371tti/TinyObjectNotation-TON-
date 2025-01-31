@@ -95,7 +95,7 @@
 ### 4.1 DateTime
 | **Bit Value**  | **Type Name** | **Description**                               | **Size (Bytes)** | **Standard/Usage**     |
 |----------------|---------------|-----------------------------------------------|------------------|------------------------|
-| `0b001010`     | `DateTime`    | Millisecond-precision date and time.          | 8                | ISO 8601 equivalent.   |
+| `0b001010`     | `DateTime`    | Millisecond-precision date and time in string.          | `n` (string on length)                | ISO 8601 equivalent.   |
 
 ### 4.2 Timestamp
 | **Bit Value**  | **Type Name** | **Description**                               | **Size (Bytes)** | **Standard/Usage** |
